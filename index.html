@@ -73,21 +73,36 @@
             aspect-ratio: 1 / 1;
             object-fit: cover;
             border-radius: 1.25rem;
-            border: 4px solid rgba(255, 255, 255, 0.85);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
-            transition: transform 0.35s ease;
+            border: 4px solid rgba(255, 255, 255, 0.88);
+            box-shadow: 0 18px 40px rgba(73, 36, 82, 0.12);
+            transition: transform 0.35s ease, filter 0.35s ease;
         }
 
         .product-image:hover {
-            transform: scale(1.05);
+            transform: scale(1.03);
+            filter: brightness(1.03);
         }
 
         .image-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.18));
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.18));
             border-radius: 1.25rem;
             pointer-events: none;
+        }
+
+        .photo-tip {
+            position: absolute;
+            left: 1rem;
+            bottom: 1rem;
+            padding: 0.55rem 0.8rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #9a4d88;
+            font-size: 0.72rem;
+            font-weight: 700;
+            box-shadow: 0 12px 24px rgba(107, 70, 193, 0.12);
+            z-index: 2;
         }
 
         .product-card-label {
@@ -101,6 +116,125 @@
             font-weight: 700;
             border-radius: 9999px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .photo-tip {
+            position: absolute;
+            left: 1rem;
+            bottom: 1rem;
+            padding: 0.55rem 0.8rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.92);
+            color: #9a4d88;
+            font-size: 0.72rem;
+            font-weight: 700;
+            box-shadow: 0 12px 24px rgba(107, 70, 193, 0.12);
+            z-index: 2;
+        }
+
+        .photo-modal {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            background: rgba(12, 10, 25, 0.65);
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.25s ease, visibility 0.25s ease;
+            z-index: 80;
+        }
+
+        .photo-modal.visible {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        .photo-modal-backdrop {
+            position: absolute;
+            inset: 0;
+            background: rgba(12, 10, 25, 0.72);
+        }
+
+        .photo-modal-content {
+            position: relative;
+            width: min(760px, 100%);
+            max-height: calc(100vh - 80px);
+            overflow: hidden;
+            border-radius: 32px;
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: 0 30px 80px rgba(92, 41, 109, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+        }
+
+        @media (max-width: 900px) {
+            .photo-modal-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .photo-modal-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .photo-modal-info {
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 18px;
+        }
+
+        .photo-modal-title {
+            margin: 0;
+            font-size: clamp(1.75rem, 2.5vw, 2.4rem);
+            color: #5f3f65;
+        }
+
+        .photo-modal-text {
+            margin: 0;
+            color: #675066;
+            line-height: 1.75;
+            font-size: 1rem;
+        }
+
+        .photo-modal-close {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 999px;
+            border: none;
+            background: rgba(255, 255, 255, 0.95);
+            color: #7f4e78;
+            font-size: 1.4rem;
+            cursor: pointer;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+            z-index: 1;
+        }
+
+        .product-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .order-button,
+        .add-cart-button {
+            min-height: 3.2rem;
+        }
+
+        .add-cart-button i {
+            display: none;
         }
 
         .cart-sidebar {
@@ -225,7 +359,7 @@
         <div class="max-w-4xl mx-auto">
             <div class="relative inline-block mb-8">
                 <div class="absolute -inset-4 bg-pink-100 rounded-full blur-2xl opacity-50 floating"></div>
-                <img src="hero.png" alt="Dewiii Bukett Hero" class="relative w-48 h-48 md:w-64 md:h-64 object-cover rounded-full border-8 border-white shadow-2xl mx-auto mb-6">
+                <img src="photo_2026-04-15_21-17-18.jpg" alt="Dewiii Bukett Hero" class="relative w-48 h-48 md:w-64 md:h-64 object-cover rounded-full border-8 border-white shadow-2xl mx-auto mb-6">
                 <!-- Badges -->
                 <div class="absolute -right-4 top-10 bg-white px-3 py-1 rounded-full shadow-md border border-pink-100 flex items-center gap-1 animate-bounce">
                     <span class="text-[10px] font-bold text-pink-500">✨ Aesthetic</span>
@@ -370,6 +504,18 @@
 
     <div id="toastMessage" class="toast"></div>
 
+    <div id="photoModal" class="photo-modal" aria-hidden="true">
+        <div class="photo-modal-backdrop"></div>
+        <div class="photo-modal-content">
+            <button id="closePhotoModal" class="photo-modal-close" type="button">×</button>
+            <img id="photoModalImage" class="photo-modal-image" src="" alt="Preview Buket" />
+            <div class="photo-modal-info">
+                <h2 id="photoModalTitle" class="photo-modal-title">Dewiii Bukett</h2>
+                <p id="photoModalText" class="photo-modal-text"></p>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="py-12 border-t border-pink-100 mt-10">
         <div class="max-w-6xl mx-auto px-6 text-center">
@@ -395,8 +541,8 @@
                 range: '5–10 Lembar',
                 price: '45K',
                 label: 'Best Seller',
-                description: 'Buket segar dengan sentuhan elegan untuk momen spesial.',
-                image: 'images/photo_2026-04-14_21-30-56.jpg',
+                description: 'Buket uang 45K dengan susunan rapi, cocok untuk hadiah ulang tahun dan ucapan terima kasih.',
+                image: 'images/photo_2026-04-14_21-31-11.jpg',
                 alt: 'Buket uang 5-10 lembar',
             },
             {
@@ -404,23 +550,23 @@
                 range: '11–20 Lembar',
                 price: '55K',
                 label: 'Popular',
-                description: 'Pilihan populer untuk hadiah anniversary dan ulang tahun.',
-                image: 'images/photo_2026-04-14_21-31-00.jpg',
+                description: 'Buket uang 55K dengan pita premium, ideal untuk anniversary dan hadiah spesial.',
+                image: 'images/photo_2026-04-14_21-31-07.jpg',
                 alt: 'Buket uang 11-20 lembar',
             },
             {
                 id: 'buket-3',
                 range: '21–30 Lembar',
                 price: '75K',
-                description: 'Desain premium dengan bunga dan aksen mewah.',
-                image: 'images/photo_2026-04-14_21-31-02.jpg',
+                description: 'Buket uang 75K lengkap dengan aksen satin, tampil eksklusif dan elegan.',
+                image: 'images/photo_2026-04-14_21-31-11.jpg',
                 alt: 'Buket uang 21-30 lembar',
             },
             {
                 id: 'buket-4',
                 range: '31–40 Lembar',
                 price: '95K',
-                description: 'Buket besar yang memorable untuk hari istimewa.',
+                description: 'Buket uang 95K untuk kejutan besar, dikemas mewah dengan detail premium.',
                 image: 'images/photo_2026-04-14_21-31-07.jpg',
                 alt: 'Buket uang 31-40 lembar',
             },
@@ -428,7 +574,7 @@
                 id: 'buket-5',
                 range: '41–50 Lembar',
                 price: '115K',
-                description: 'Sentuhan mewah dengan komposisi bunga dan uang terbaik.',
+                description: 'Buket uang 115K paket deluxe, sempurna untuk momen penting dan hadiah prestise.',
                 image: 'images/photo_2026-04-14_21-31-11.jpg',
                 alt: 'Buket uang 41-50 lembar',
             }
@@ -447,6 +593,11 @@
         const checkoutButton = document.getElementById('checkoutButton');
         const navOrderButton = document.getElementById('navOrderButton');
         const consultButtons = Array.from(document.querySelectorAll('#consultButton, #consultButtonSection'));
+        const photoModal = document.getElementById('photoModal');
+        const photoModalImage = document.getElementById('photoModalImage');
+        const photoModalTitle = document.getElementById('photoModalTitle');
+        const photoModalText = document.getElementById('photoModalText');
+        const closePhotoModalButton = document.getElementById('closePhotoModal');
 
         let cart = JSON.parse(localStorage.getItem('bukettCart') || '[]');
 
@@ -480,6 +631,18 @@
             cartSidebar.classList.remove('open');
             cartOverlay.classList.remove('visible');
             document.body.classList.remove('no-scroll');
+        }
+
+        function openPhotoModal(product) {
+            photoModalImage.src = product.image;
+            photoModalImage.alt = product.alt;
+            photoModalTitle.textContent = `${product.range} — ${product.price}`;
+            photoModalText.textContent = product.description;
+            photoModal.classList.add('visible');
+        }
+
+        function closePhotoModal() {
+            photoModal.classList.remove('visible');
         }
 
         function redirectWhatsapp(message) {
@@ -582,29 +745,25 @@
                         <img src="${product.image}" alt="${product.alt}" class="product-image" />
                         <div class="image-overlay"></div>
                         ${product.label ? `<span class="product-card-label">${product.label}</span>` : ''}
+                        <span class="photo-tip">Klik foto untuk melihat detail</span>
                     </div>
                     <div class="p-5 text-left">
                         <h4 class="text-sm uppercase tracking-[0.18em] text-pink-500 font-bold mb-2">${product.range}</h4>
-                        <p class="text-2xl font-bold text-gray-800 mb-2">${product.price}</p>
-                        <p class="text-sm text-gray-500 mb-4">${product.description}</p>
-                        <div class="flex flex-col gap-3">
-                            <button class="order-button bg-pink-500 text-white py-3 rounded-3xl font-bold hover:bg-pink-600 transition-all flex items-center justify-center gap-2">
-                                <i data-lucide="message-circle" class="w-4 h-4"></i>
-                                Pesan Sekarang
-                            </button>
-                            <button class="add-cart-button bg-white text-pink-500 border border-pink-200 py-3 rounded-3xl font-bold hover:bg-pink-50 transition-all flex items-center justify-center gap-2">
-                                <i data-lucide="shopping-cart" class="w-4 h-4"></i>
-                                Tambahkan ke Keranjang
-                            </button>
+                        <p class="text-2xl font-bold text-gray-800 mb-4">${product.price}</p>
+                        <div class="product-actions">
+                            <button class="order-button bg-pink-500 text-white py-3 rounded-3xl font-bold hover:bg-pink-600 transition-all flex items-center justify-center gap-2 w-full"><i data-lucide="message-circle" class="w-4 h-4"></i>Pesan Sekarang</button>
+                            <button class="add-cart-button bg-white text-pink-500 border border-pink-200 py-3 rounded-3xl font-bold hover:bg-pink-50 transition-all flex items-center justify-center w-full">Masukkan ke Keranjang</button>
                         </div>
                     </div>
                 `;
 
-                card.addEventListener('click', () => orderProduct(product));
-                card.querySelector('.product-image').addEventListener('click', (event) => {
+                const image = card.querySelector('.product-image');
+
+                image.addEventListener('click', (event) => {
                     event.stopPropagation();
-                    orderProduct(product);
+                    openPhotoModal(product);
                 });
+
                 card.querySelector('.order-button').addEventListener('click', (event) => {
                     event.stopPropagation();
                     orderProduct(product);
@@ -637,6 +796,12 @@
         checkoutButton.addEventListener('click', checkoutCart);
         navOrderButton.addEventListener('click', () => redirectWhatsapp(defaultMessage));
         consultButtons.forEach((button) => button.addEventListener('click', () => redirectWhatsapp(defaultMessage)));
+        closePhotoModalButton.addEventListener('click', closePhotoModal);
+        photoModal.addEventListener('click', (event) => {
+            if (event.target === photoModal || event.target.classList.contains('photo-modal-backdrop')) {
+                closePhotoModal();
+            }
+        });
 
         renderProducts();
         renderCart();
