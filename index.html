@@ -359,7 +359,7 @@
         <div class="max-w-4xl mx-auto">
             <div class="relative inline-block mb-8">
                 <div class="absolute -inset-4 bg-pink-100 rounded-full blur-2xl opacity-50 floating"></div>
-                <img src="photo_2026-04-15_21-17-18.jpg" alt="Dewiii Bukett Hero" class="relative w-48 h-48 md:w-64 md:h-64 object-cover rounded-full border-8 border-white shadow-2xl mx-auto mb-6">
+                <img src="images/hero.jpg" alt="Dewiii Bukett Hero" class="relative w-48 h-48 md:w-64 md:h-64 object-cover rounded-full border-8 border-white shadow-2xl mx-auto mb-6">
                 <!-- Badges -->
                 <div class="absolute -right-4 top-10 bg-white px-3 py-1 rounded-full shadow-md border border-pink-100 flex items-center gap-1 animate-bounce">
                     <span class="text-[10px] font-bold text-pink-500">✨ Aesthetic</span>
@@ -393,47 +393,7 @@
                 <div class="h-[1px] w-full bg-pink-200"></div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Acc Card 1 -->
-                <div class="scroll-reveal glass rounded-3xl p-8 flex items-center gap-6 card-hover transition-all border border-white">
-                    <div class="shrink-0 w-20 h-20 bg-gradient-to-br from-pink-100 to-pink-50 rounded-2xl flex items-center justify-center shadow-inner">
-                        <span class="text-3xl">🌸</span>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-lg">Bunga-bungaan</h4>
-                        <div class="mt-2 space-y-1">
-                            <p class="text-sm text-gray-500 flex justify-between gap-4"><span>Kecil</span> <span class="font-bold text-pink-500">2K/pcs</span></p>
-                            <p class="text-sm text-gray-500 flex justify-between gap-4"><span>Besar</span> <span class="font-bold text-pink-500">3K/pcs</span></p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Acc Card 2 -->
-                <div class="scroll-reveal glass rounded-3xl p-8 flex items-center gap-6 card-hover transition-all border border-white" style="transition-delay: 100ms;">
-                    <div class="shrink-0 w-20 h-20 bg-gradient-to-br from-purple-100 to-purple-50 rounded-2xl flex items-center justify-center shadow-inner">
-                        <span class="text-3xl">🦋</span>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-lg">Kupu-Kupu</h4>
-                        <p class="text-sm text-gray-500 mt-2">Menambah kesan manis & hidup pada buket anda.</p>
-                        <p class="text-lg font-bold text-pink-500 mt-1">2K/pcs</p>
-                    </div>
-                </div>
-
-                <!-- Acc Card 3 -->
-                <div class="scroll-reveal glass rounded-3xl p-8 flex items-center gap-6 card-hover transition-all border border-white" style="transition-delay: 200ms;">
-                    <div class="shrink-0 w-20 h-20 bg-gradient-to-br from-nude-100 to-nude-50 rounded-2xl flex items-center justify-center shadow-inner" style="background-color: #FDF4EB;">
-                        <span class="text-3xl">🧸</span>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-lg">Boneka</h4>
-                        <div class="mt-2 space-y-1">
-                            <p class="text-sm text-gray-500 flex justify-between gap-4"><span>Boneka Biasa</span> <span class="font-bold text-pink-500">15K</span></p>
-                            <p class="text-sm text-gray-500 flex justify-between gap-4"><span>Boneka Kertas</span> <span class="font-bold text-pink-500">5K</span></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div id="accessoriesGrid" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
         </div>
     </section>
 
@@ -522,9 +482,8 @@
             <h1 class="font-script text-4xl text-pink-400 mb-4">Dewiii Bukett</h1>
             <p class="text-sm text-gray-400 mb-8">&copy; 2026 Crafted with ❤️ for your special moments.</p>
             <div class="flex justify-center gap-6">
-                <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center text-pink-400 hover:bg-pink-400 hover:text-white transition-all"><i data-lucide="instagram" class="w-5 h-5"></i></a>
-                <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center text-pink-400 hover:bg-pink-400 hover:text-white transition-all"><i data-lucide="facebook" class="w-5 h-5"></i></a>
-                <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center text-pink-400 hover:bg-pink-400 hover:text-white transition-all"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                <a href="https://wa.me/6289528332956?text=Halo%20Dewiii%20Bukett!" target="_blank" rel="noopener" class="w-10 h-10 rounded-full glass flex items-center justify-center text-pink-400 hover:bg-pink-400 hover:text-white transition-all" title="WhatsApp"><i data-lucide="message-circle" class="w-5 h-5"></i></a>
+                <a href="https://wa.me/6289528332956?text=Halo%20Dewiii%20Bukett!" target="_blank" rel="noopener" class="w-10 h-10 rounded-full glass flex items-center justify-center text-pink-400 hover:bg-pink-400 hover:text-white transition-all" title="Order via WhatsApp"><i data-lucide="shopping-bag" class="w-5 h-5"></i></a>
             </div>
         </div>
     </footer>
@@ -542,7 +501,7 @@
                 price: '45K',
                 label: 'Best Seller',
                 description: 'Buket uang 45K dengan susunan rapi, cocok untuk hadiah ulang tahun dan ucapan terima kasih.',
-                image: 'images/photo_2026-04-14_21-31-11.jpg',
+                image: 'images/buket-45k.jpg',
                 alt: 'Buket uang 5-10 lembar',
             },
             {
@@ -551,7 +510,7 @@
                 price: '55K',
                 label: 'Popular',
                 description: 'Buket uang 55K dengan pita premium, ideal untuk anniversary dan hadiah spesial.',
-                image: 'images/photo_2026-04-14_21-31-07.jpg',
+                image: 'images/buket-55k.jpg',
                 alt: 'Buket uang 11-20 lembar',
             },
             {
@@ -559,7 +518,7 @@
                 range: '21–30 Lembar',
                 price: '75K',
                 description: 'Buket uang 75K lengkap dengan aksen satin, tampil eksklusif dan elegan.',
-                image: 'images/photo_2026-04-14_21-31-11.jpg',
+                image: 'images/buket-75k.jpg',
                 alt: 'Buket uang 21-30 lembar',
             },
             {
@@ -567,7 +526,7 @@
                 range: '31–40 Lembar',
                 price: '95K',
                 description: 'Buket uang 95K untuk kejutan besar, dikemas mewah dengan detail premium.',
-                image: 'images/photo_2026-04-14_21-31-07.jpg',
+                image: 'images/buket-95k.jpg',
                 alt: 'Buket uang 31-40 lembar',
             },
             {
@@ -575,9 +534,39 @@
                 range: '41–50 Lembar',
                 price: '115K',
                 description: 'Buket uang 115K paket deluxe, sempurna untuk momen penting dan hadiah prestise.',
-                image: 'images/photo_2026-04-14_21-31-11.jpg',
+                image: 'images/buket-115k.jpg',
                 alt: 'Buket uang 41-50 lembar',
             }
+        ];
+
+        const accessories = [
+            {
+                icon: '🌸',
+                title: 'Bunga-bungaan',
+                gradient: 'from-pink-100 to-pink-50',
+                items: [
+                    { label: 'Kecil', price: '2K/pcs' },
+                    { label: 'Besar', price: '3K/pcs' },
+                ],
+            },
+            {
+                icon: '🦋',
+                title: 'Kupu-Kupu',
+                gradient: 'from-purple-100 to-purple-50',
+                items: [
+                    { label: null, price: '2K/pcs', description: 'Menambah kesan manis & hidup pada buket anda.' },
+                ],
+            },
+            {
+                icon: '🧸',
+                title: 'Boneka',
+                gradient: null,
+                bgColor: '#FDF4EB',
+                items: [
+                    { label: 'Boneka Biasa', price: '15K' },
+                    { label: 'Boneka Kertas', price: '5K' },
+                ],
+            },
         ];
 
         const productGrid = document.querySelector('.product-grid');
@@ -735,6 +724,37 @@
             redirectWhatsapp(message);
         }
 
+        function renderAccessories() {
+            const grid = document.getElementById('accessoriesGrid');
+            accessories.forEach((acc, index) => {
+                const card = document.createElement('div');
+                card.className = 'scroll-reveal glass rounded-3xl p-8 flex items-center gap-6 card-hover transition-all border border-white';
+                card.style.transitionDelay = `${index * 100}ms`;
+
+                const gradient = acc.bgColor
+                    ? `style="background-color: ${acc.bgColor};"`
+                    : `style="background: linear-gradient(to bottom right, var(--tw-gradient-stops));"`;
+
+                const itemsHtml = acc.items.map((item) => {
+                    if (item.description) {
+                        return `<p class="text-sm text-gray-500 mt-2">${item.description}</p><p class="text-lg font-bold text-pink-500 mt-1">${item.price}</p>`;
+                    }
+                    return `<p class="text-sm text-gray-500 flex justify-between gap-4"><span>${item.label}</span> <span class="font-bold text-pink-500">${item.price}</span></p>`;
+                }).join('');
+
+                card.innerHTML = `
+                    <div class="shrink-0 w-20 h-20 bg-gradient-to-br ${acc.gradient || 'from-nude-100 to-nude-50'} rounded-2xl flex items-center justify-center shadow-inner">
+                        <span class="text-3xl">${acc.icon}</span>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg">${acc.title}</h4>
+                        <div class="mt-2 space-y-1">${itemsHtml}</div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
         function renderProducts() {
             products.forEach((product, index) => {
                 const card = document.createElement('article');
@@ -804,6 +824,7 @@
         });
 
         renderProducts();
+        renderAccessories();
         renderCart();
         initScrollReveal();
     </script>
